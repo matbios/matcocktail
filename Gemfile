@@ -2,6 +2,10 @@ source 'https://rubygems.org'
 
 ruby '2.1.2'
 
+gem "twitter-bootstrap-rails"
+gem "therubyracer"
+gem "less-rails"
+
 gem 'thin'
 gem 'rails_12factor', group: :production
 
