@@ -1,11 +1,23 @@
-<h1>Cocktails list :</h1>
+<div class="container">
 
-<nav>
-  <%= link_to 'Create a cocktail', new_cocktail_path %>
-</nav>
+  <div class="row">
 
-<ul>
-  <% @cocktails.each do |cocktail| %>
-    <li><%=link_to(cocktail.name, cocktail_path(cocktail))%></li>
-  <% end %>
-</ul>
+    <div class="col-md-6">
+      <h2>Welcome to MisterCockail !</h2>
+      <p>
+        <iframe width="420" height="315" src="//www.youtube.com/embed/Paol5brD9rE" frameborder="0" allowfullscreen></iframe>
+      </p>
+    </div>
+
+    <div class="col-md-6">
+      <h2>Cocktails list :</h2>
+      <ul>
+        <% @cocktails.each do |cocktail| %>
+          <li><%=link_to(cocktail.name, cocktail_path(cocktail))%></li>
+        <% end %>
+      </ul>
+    </div>
+
+  </div>
+
+</div>

@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  resources :cocktails do
+  resources :cocktails, :path => '/' do
     resources :doses, only: [:create, :index, :new, :show]
     resources :ingredients, only: [:create, :index, :new, :show]
   end

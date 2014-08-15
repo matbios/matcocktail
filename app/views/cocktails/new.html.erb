@@ -1,13 +1,21 @@
-<h1>Create a new cocktail :</h1>
-<%= form_for(@cocktail) do |c| %>
+<div class="container">
+  <div class="row">
 
-  <%= c.label :name %>
-  <%= c.text_field :name %>
+    <h1>Create a new cocktail :</h1>
 
-  <%= c.submit %>
+    <%= form_for(@cocktail) do |c| %>
+      <p>
+        <%= c.label :name %>
+        <%= c.text_field :name %>
+      </p>
+      <p>
+        <%= c.submit %>
+      </p>
+    <% end %>
 
-<% end %>
+    <nav>
+      <%= link_to 'Back', cocktails_path %>
+    </nav>
 
-<nav>
-  <%= link_to 'Back', cocktails_path %>
-</nav>
+</div>
+</div>

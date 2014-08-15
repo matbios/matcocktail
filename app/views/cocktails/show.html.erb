@@ -1,7 +1,33 @@
-<h1><%= @cocktail.name %></h1>
+<div class="container">
+  <div class="row">
 
-<p>Soon more infos on this cocktail !</p>
+    <h1><%= @cocktail.name %></h1>
 
-<p><%= link_to 'Delete this cocktail', @cocktail, method: :delete %></p>
+    <p>Doses :</p>
+    <ul>
+      <% @cocktail.doses.each do |dose| %>
+        <li><%= dose.amount %> of <%= dose.ingredient.name %></li>
+      <% end %>
+    </ul>
 
-<p><%= link_to 'Back', cocktails_path %></p>
+    <h2> add a dose </h2>
+    <%= form_for([@cocktail, @dose]) do |c| %>
+      <p>
+        <%= c.label :amount %>
+        <%= c.text_field :amount %>
+
+        <%= c.label :ingredient_id %>
+        <%= c.collection_select :ingredient_id, Ingredient.all, :id, :name %>
+      </p>
+      <p>
+        <%= c.submit %>
+      </p>
+    <% end %>
+
+
+    <p><%= link_to 'Delete this cocktail', @cocktail, method: :delete %></p>
+
+    <p><%= link_to 'Back', cocktails_path %></p>
+
+  </div>
+</div>
